@@ -229,6 +229,14 @@ footer a { color: var(--muted); }
     .hero { padding-top: 56px; }
     section { padding: 52px 0; }
 }
+/* Touch screens & phones: give navigation links at least a 44pt tap area (Apple HIG) */
+@media (pointer: coarse), (max-width: 860px) {
+    .nav-links a, footer nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 4px; }
+    footer nav { gap: 12px; }
+    .toc ol { gap: 0; }
+    .toc a { display: flex; align-items: center; min-height: 44px; }
+    summary { min-height: 44px; }
+}
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .card { transition: none; }
